@@ -4,14 +4,14 @@
 
 /* --- Custom Properties --- */
 :root {
-  --color-bg:        #faf8f5;
-  --color-surface:   #ffffff;
-  --color-border:    #e8e2d9;
-  --color-text:      #2d2926;
-  --color-muted:     #7a6f66;
-  --color-accent:    #8b6f5e;
-  --color-accent-dk: #6b5244;
-  --color-tag-bg:    #ede7e0;
+  --color-bg:        #f0e6d0;
+  --color-surface:   #f7eed8;
+  --color-border:    #d9c9a8;
+  --color-text:      #2c1f0e;
+  --color-muted:     #7a6340;
+  --color-accent:    #8b5e3c;
+  --color-accent-dk: #6b4228;
+  --color-tag-bg:    #e4d4b0;
 
   --font-serif:  'Playfair Display', Georgia, serif;
   --font-sans:   'Lato', system-ui, sans-serif;
