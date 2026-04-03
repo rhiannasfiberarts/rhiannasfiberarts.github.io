@@ -11,19 +11,8 @@ tags:
 #   - assets/images/wip2.jpg
 ---
 
-Hello and welcome! I've been meaning to start a proper home for my fiber work for a while now, and here we finally are.
+Hello World!
 
-## What you'll find here
+I am starting this blog mostly as a form of record keeping. I am a fiber artist and pursue	pretty much anything that falls under that umbrella. My current fixations are spinning, weaving, and natural dyeing, but I am sure more avenues of fiber art will be pursued in the future. 
 
-I work primarily with **natural fibers** — wool, linen, cotton — and I'm especially drawn to the interplay of color in weaving and tapestry work. This blog will be a mix of:
-
-- Finished project write-ups
-- Works-in-progress and process notes
-- Material and tool recommendations
-- The occasional rambling thought about color theory
-
-## How I got here
-
-I picked up a Ashford rigid heddle loom a few years ago thinking it would be a quiet weekend hobby. It was not quiet. It absorbed everything. My evenings, my weekends, most of my kitchen table.
-
-I hope you find something useful or inspiring here.
+So stick around if you would like to follow along with all my fiber art adventures! 
