@@ -72,7 +72,9 @@ Click into the `assets` folder, then `images`.
 Click **Add file → Upload files**, then drag and drop your photos. Click **Commit changes**.
 
 **Photo tips:**
-- Use `.jpg` for photos (smaller file size)
+- Use `.jpg` for photos — **do not upload `.heic` files** (iPhone default format), they won't display in most browsers
+- To convert HEIC to JPG on Mac: open in Preview → File → Export → Format: JPEG
+- Or select photos in Finder → right-click → Quick Actions → Convert Image → JPEG
 - Keep filenames simple, no spaces — use dashes: `my-blue-shawl.jpg`
 - Aim for photos under 1–2 MB for fast loading
 
