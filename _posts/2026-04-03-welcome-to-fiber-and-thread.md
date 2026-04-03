@@ -2,7 +2,7 @@
 layout: post
 title: "Welcome to Fiber & Thread"
 date: 2026-04-03
-# cover_image: assets/images/welcome-cover.jpg   ← uncomment and set to your photo
+cover_image: assets/images/IMG_1851.jpeg   ← uncomment and set to your photo
 tags:
   - intro
   - weaving
@@ -24,6 +24,6 @@ I work primarily with **natural fibers** — wool, linen, cotton — and I'm esp
 
 ## How I got here
 
-I picked up a rigid heddle loom a few years ago thinking it would be a quiet weekend hobby. It was not quiet. It absorbed everything. My evenings, my weekends, most of my kitchen table.
+I picked up a Ashford rigid heddle loom a few years ago thinking it would be a quiet weekend hobby. It was not quiet. It absorbed everything. My evenings, my weekends, most of my kitchen table.
 
-I hope you find something useful or inspiring here. Pull up a chair — there's always something on the loom.
+I hope you find something useful or inspiring here.
