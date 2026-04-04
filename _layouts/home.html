@@ -3,58 +3,40 @@ layout: default
 ---
 <style>
   @media (min-width: 900px) {
-    .hero-inner {
+    .home-about-inner {
       display: grid;
-      grid-template-columns: 1fr auto;
-      align-items: center;
+      grid-template-columns: auto 1fr;
+      align-items: start;
       gap: 2rem;
     }
-    .hero-spindle {
+    .home-spindle {
       display: flex;
       justify-content: center;
-      align-items: center;
+      align-items: flex-start;
     }
   }
   @media (max-width: 899px) {
-    .hero-spindle { display: none !important; }
+    .home-spindle { display: none !important; }
   }
   #spindle-scene {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 1.5rem 0 1rem;
-    min-height: 540px;
+    padding: 0.5rem 0;
     cursor: pointer;
     user-select: none;
     background: transparent;
   }
-  #spindle-hint, #spindle-status {
-    font-size: 13px;
-    color: var(--color-text-secondary, #888);
-    min-height: 18px;
-    text-align: center;
-  }
-  #spindle-hint { margin-bottom: 0.75rem; }
-  #spindle-status { margin-top: 0.5rem; }
   #spindle-cv { background: transparent; display: block; }
 </style>
 
 <section class="hero">
   <div class="hero-inner">
-    <div class="hero-spindle">
-      <div id="spindle-scene">
-        <div id="spindle-hint">click to spin</div>
-        <canvas id="spindle-cv" width="240" height="460"></canvas>
-        <div id="spindle-status"></div>
-      </div>
-    </div>
-
     {% if page.hero_image %}
     <div class="hero-image">
       <img src="{{ page.hero_image | relative_url }}" alt="{{ site.title }}">
     </div>
     {% endif %}
-
     <div class="hero-text">
       <h1>{{ page.hero_title | default: site.title }}</h1>
       <p class="hero-subtitle">{{ page.hero_subtitle | default: site.description }}</p>
@@ -64,7 +46,18 @@ layout: default
 </section>
 
 {% if page.content != "" %}
-<section class="home-about container">{{ content }}</section>
+<section class="home-about container">
+  <div class="home-about-inner">
+    <div class="home-spindle">
+      <div id="spindle-scene">
+        <canvas id="spindle-cv" width="240" height="460"></canvas>
+      </div>
+    </div>
+    <div class="home-about-text">
+      {{ content }}
+    </div>
+  </div>
+</section>
 {% endif %}
 
 <section class="home-recent container">
@@ -98,8 +91,6 @@ document.addEventListener('DOMContentLoaded', function() {
   if (window.innerWidth < 900) return;
 
   const cv    = document.getElementById('spindle-cv');
-  const hint  = document.getElementById('spindle-hint');
-  const status= document.getElementById('spindle-status');
   const scene = document.getElementById('spindle-scene');
   if (!cv || !scene) return;
 
@@ -269,7 +260,7 @@ document.addEventListener('DOMContentLoaded', function() {
       ctx.save(); setInk(1.2);
       ctx.beginPath(); ctx.moveTo(CX,68); ctx.quadraticCurveTo(CX+10,90,CX+12,112); ctx.stroke(); ctx.restore();
       drawFalling(fallY,fallRot);
-      if(fallY>H+100){state='dead'; updateLabels(); return;}
+      if(fallY>H+100){state='dead'; return;}
       raf=requestAnimationFrame(render); return;
     }
     if(state==='dead'){
@@ -279,30 +270,17 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   }
 
-  function updateLabels(){
-    if(state==='spinning'){
-      const m=['','spinning ×1 — click for more','spinning ×2 — click for danger','spinning ×3'];
-      hint.textContent=m[Math.min(clicks,3)]; status.textContent='';
-    } else {
-      const h={idle:'click to spin',snapping:'',falling:'',dead:'click to reset'};
-      const s={idle:'',snapping:'thread snapping...!',falling:'',dead:'spindle lost.'};
-      hint.textContent=h[state]||''; status.textContent=s[state]||'';
-    }
-  }
-
   scene.addEventListener('click',()=>{
     if(state==='dead'){
       clicks=0; state='idle'; angle=0; bobY=130; bobDir=1;
       snapT=0; fallY=0; fallVel=0; fallRot=0; yarnLayers=0; last=null;
-      cancelAnimationFrame(raf); raf=requestAnimationFrame(render); updateLabels(); return;
+      cancelAnimationFrame(raf); raf=requestAnimationFrame(render); return;
     }
     if(state==='snapping'||state==='falling') return;
     clicks++;
     state=clicks>=3?'snapping':'spinning';
-    updateLabels();
   });
 
   raf=requestAnimationFrame(render);
-  updateLabels();
 });
 </script>
