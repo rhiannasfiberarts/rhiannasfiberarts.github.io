@@ -5,7 +5,7 @@ layout: default
   @media (min-width: 900px) {
     .hero-inner {
       display: grid;
-      grid-template-columns: 1fr auto 1fr;
+      grid-template-columns: 1fr auto;
       align-items: center;
       gap: 2rem;
     }
@@ -13,38 +13,39 @@ layout: default
       display: flex;
       justify-content: center;
       align-items: center;
-      order: -1;
     }
   }
   @media (max-width: 899px) {
     .hero-spindle { display: none !important; }
   }
-
-  /* Scope all spindle styles */
-  #spindle-widget #scene {
-    display: flex; flex-direction: column; align-items: center;
-    padding: 1.5rem 0 1rem; min-height: 540px;
-    cursor: pointer; user-select: none; background: transparent;
+  #spindle-scene {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem 0 1rem;
+    min-height: 540px;
+    cursor: pointer;
+    user-select: none;
+    background: transparent;
   }
-  #spindle-widget #hint {
-    font-size: 13px; color: var(--color-text-secondary);
-    margin-bottom: 0.75rem; min-height: 18px; text-align: center;
+  #spindle-hint, #spindle-status {
+    font-size: 13px;
+    color: var(--color-text-secondary, #888);
+    min-height: 18px;
+    text-align: center;
   }
-  #spindle-widget #status {
-    font-size: 13px; color: var(--color-text-secondary);
-    margin-top: 0.5rem; min-height: 18px; text-align: center;
-  }
-  #spindle-widget canvas { background: transparent; }
+  #spindle-hint { margin-bottom: 0.75rem; }
+  #spindle-status { margin-top: 0.5rem; }
+  #spindle-cv { background: transparent; display: block; }
 </style>
 
 <section class="hero">
   <div class="hero-inner">
-    <!-- Spindle animation — desktop only -->
-    <div class="hero-spindle" id="spindle-widget">
-      <div id="scene">
-        <div id="hint">click to spin</div>
-        <canvas id="cv" width="240" height="460"></canvas>
-        <div id="status"></div>
+    <div class="hero-spindle">
+      <div id="spindle-scene">
+        <div id="spindle-hint">click to spin</div>
+        <canvas id="spindle-cv" width="240" height="460"></canvas>
+        <div id="spindle-status"></div>
       </div>
     </div>
 
@@ -63,9 +64,7 @@ layout: default
 </section>
 
 {% if page.content != "" %}
-<section class="home-about container">
-  {{ content }}
-</section>
+<section class="home-about container">{{ content }}</section>
 {% endif %}
 
 <section class="home-recent container">
@@ -95,119 +94,111 @@ layout: default
 </section>
 
 <script>
-(function() {
-  // Only run on desktop
+document.addEventListener('DOMContentLoaded', function() {
   if (window.innerWidth < 900) return;
 
-  const cv = document.getElementById('cv');
+  const cv    = document.getElementById('spindle-cv');
+  const hint  = document.getElementById('spindle-hint');
+  const status= document.getElementById('spindle-status');
+  const scene = document.getElementById('spindle-scene');
+  if (!cv || !scene) return;
+
   const ctx = cv.getContext('2d');
-  const hint = document.getElementById('hint');
-  const status = document.getElementById('status');
-  const scene = document.getElementById('scene');
-  const W = 240, H = 460, CX = 120;
+  const W=240, H=460, CX=120;
 
-  let clicks = 0, state = 'idle', angle = 0;
-  let bobY = 130, bobDir = 1;
-  let snapT = 0, fallY = 0, fallVel = 0, fallRot = 0;
-  let raf, last = null;
-  let yarnLayers = 0;
+  let clicks=0, state='idle', angle=0;
+  let bobY=130, bobDir=1;
+  let snapT=0, fallY=0, fallVel=0, fallRot=0;
+  let raf, last=null, yarnLayers=0;
 
-  function j(v, amt) { return v + (Math.random() - 0.5) * amt; }
+  function j(v,amt){return v+(Math.random()-0.5)*amt;}
 
-  function setInk(width) {
-    const ink = getComputedStyle(document.documentElement).getPropertyValue('--color-text-primary').trim() || '#1a1a1a';
-    ctx.strokeStyle = ink;
-    ctx.lineWidth = width || 1.2;
-    ctx.lineCap = 'round';
-    ctx.lineJoin = 'round';
+  function setInk(width){
+    const ink=getComputedStyle(document.documentElement).getPropertyValue('--color-text-primary').trim()||'#1a1a1a';
+    ctx.strokeStyle=ink; ctx.lineWidth=width||1.2; ctx.lineCap='round'; ctx.lineJoin='round';
   }
 
-  function drawWool() {
-    ctx.save();
-    ctx.translate(CX, 58);
-    setInk(1.2);
-    const circles = [
+  function drawWool(){
+    ctx.save(); ctx.translate(CX,58); setInk(1.2);
+    const circles=[
       {x:-22,y:-18,r:16},{x:2,y:-26,r:20},{x:26,y:-18,r:16},
       {x:-36,y:-4,r:13},{x:38,y:-4,r:13},
       {x:-18,y:8,r:14},{x:4,y:10,r:15},{x:24,y:8,r:14},
     ];
-    for (let c of circles) {
+    for(let c of circles){
       ctx.beginPath();
-      ctx.arc(j(c.x,1), j(c.y,1), c.r+j(0,0.5), 0, Math.PI*2);
+      ctx.arc(j(c.x,1),j(c.y,1),c.r+j(0,0.5),0,Math.PI*2);
       ctx.stroke();
     }
     setInk(0.6);
-    const textures = [
+    const textures=[
       [-24,-8,-6,-12],[-6,-12,12,-8],[12,-8,28,-4],
       [-20,2,0,-2],[0,-2,20,2],[-16,10,4,6],[4,6,22,10],
       [-10,-18,8,-22],[8,-22,22,-16],
     ];
-    for (let t of textures) {
+    for(let t of textures){
       ctx.beginPath();
-      ctx.moveTo(j(t[0],1.2), j(t[1],1.2));
+      ctx.moveTo(j(t[0],1.2),j(t[1],1.2));
       ctx.quadraticCurveTo(
-        j((t[0]+t[2])/2,1.5), j((t[1]+t[3])/2-Math.abs(t[2]-t[0])*0.08,1.5),
-        j(t[2],1.2), j(t[3],1.2)
+        j((t[0]+t[2])/2,1.5),
+        j((t[1]+t[3])/2-Math.abs(t[2]-t[0])*0.08,1.5),
+        j(t[2],1.2),j(t[3],1.2)
       );
       ctx.stroke();
     }
     ctx.restore();
   }
 
-  function drawThread(topY, broken, breakFrac) {
-    let startY = 66, endY = topY + 6;
+  function drawThread(topY,broken,breakFrac){
+    let startY=66, endY=topY+6;
     ctx.save(); setInk(1.2);
-    if (!broken) {
+    if(!broken){
       ctx.beginPath();
-      for (let y = startY; y <= endY; y += 4) {
-        let t = (y-startY)/(endY-startY);
-        let wave = Math.sin(angle*2+t*10)*1.5;
-        y === startY ? ctx.moveTo(CX+wave,y) : ctx.lineTo(CX+wave,y);
+      for(let y=startY;y<=endY;y+=4){
+        let t=(y-startY)/(endY-startY);
+        let wave=Math.sin(angle*2+t*10)*1.5;
+        y===startY?ctx.moveTo(CX+wave,y):ctx.lineTo(CX+wave,y);
       }
       ctx.stroke();
     } else {
-      let breakY = startY+(endY-startY)*breakFrac;
+      let breakY=startY+(endY-startY)*breakFrac;
       ctx.beginPath();
-      for (let y = startY; y <= breakY; y += 4) {
-        let t = (y-startY)/(endY-startY);
-        let wave = Math.sin(angle*2+t*10)*1.5;
-        y === startY ? ctx.moveTo(CX+wave,y) : ctx.lineTo(CX+wave,y);
+      for(let y=startY;y<=breakY;y+=4){
+        let t=(y-startY)/(endY-startY);
+        let wave=Math.sin(angle*2+t*10)*1.5;
+        y===startY?ctx.moveTo(CX+wave,y):ctx.lineTo(CX+wave,y);
       }
       ctx.stroke();
-      ctx.beginPath(); ctx.moveTo(CX, breakY);
-      ctx.quadraticCurveTo(CX+12, breakY+12, CX+8, breakY+28); ctx.stroke();
+      ctx.beginPath(); ctx.moveTo(CX,breakY);
+      ctx.quadraticCurveTo(CX+12,breakY+12,CX+8,breakY+28); ctx.stroke();
     }
     ctx.restore();
   }
 
-  function drawHook(hookAng) {
+  function drawHook(hookAng){
     setInk(1.6);
-    const reach = 9, projX = reach*Math.sin(hookAng);
+    const reach=9, projX=reach*Math.sin(hookAng);
     ctx.beginPath();
-    ctx.moveTo(j(0,.5), j(0,.5));
-    ctx.lineTo(j(0,.5), j(-10,.5));
+    ctx.moveTo(j(0,.5),j(0,.5)); ctx.lineTo(j(0,.5),j(-10,.5));
     ctx.bezierCurveTo(j(0,.4),j(-17,.4),j(projX,.4),j(-20,.4),j(projX,.4),j(-14,.4));
     ctx.bezierCurveTo(j(projX,.4),j(-10,.4),j(projX*.5,.4),j(-9,.4),j(projX*.4,.4),j(-11,.4));
     ctx.stroke();
   }
 
-  function drawSpindle(topY, ang, shakeX, layers) {
-    ctx.save();
-    ctx.translate(CX+(shakeX||0), topY);
+  function drawSpindle(topY,ang,shakeX,layers){
+    ctx.save(); ctx.translate(CX+(shakeX||0),topY);
     drawHook(ang);
-    const WR=22, WRY=6, wy=12;
-    setInk(1.4);
-    ctx.beginPath(); ctx.ellipse(j(0,.8),j(wy,.8),WR,WRY,0,0,Math.PI*2); ctx.stroke();
+    const WR=22,WRY=6,wy=12;
+    setInk(1.4); ctx.beginPath(); ctx.ellipse(j(0,.8),j(wy,.8),WR,WRY,0,0,Math.PI*2); ctx.stroke();
     setInk(0.6);
     ctx.beginPath(); ctx.ellipse(j(0,.5),j(wy,.5),WR*.65,WRY*.65,0,0,Math.PI*2); ctx.stroke();
     ctx.beginPath(); ctx.ellipse(j(0,.4),j(wy,.4),WR*.3,WRY*.3,0,0,Math.PI*2); ctx.stroke();
-    const rimH = 5;
+    const rimH=5;
     setInk(1.2);
     ctx.beginPath(); ctx.moveTo(j(-WR,.6),j(wy,.4)); ctx.lineTo(j(-WR,.6),j(wy+rimH,.4)); ctx.stroke();
     ctx.beginPath(); ctx.moveTo(j(WR,.6),j(wy,.4)); ctx.lineTo(j(WR,.6),j(wy+rimH,.4)); ctx.stroke();
-    setInk(1.0);
-    ctx.beginPath(); ctx.ellipse(j(0,.6),j(wy+rimH,.5),WR,WRY,0,0,Math.PI); ctx.stroke();
-    const shaftTop=wy+rimH+4, bellyY=shaftTop+30, bellyW=8, tipY=shaftTop+152;
+    setInk(1.0); ctx.beginPath(); ctx.ellipse(j(0,.6),j(wy+rimH,.5),WR,WRY,0,0,Math.PI); ctx.stroke();
+    const shaftTop=wy+rimH+4,bellyY=shaftTop+30,bellyW=8,tipY=shaftTop+152;
     setInk(1.3);
     ctx.beginPath();
     ctx.moveTo(j(-4,.8),j(shaftTop,.8));
@@ -217,110 +208,101 @@ layout: default
     ctx.moveTo(j(4,.8),j(shaftTop,.8));
     ctx.bezierCurveTo(j(bellyW,1),j(shaftTop+12,1),j(bellyW,1),j(bellyY,1),j(1.2,.8),j(bellyY+28,.8));
     ctx.lineTo(j(.4,.5),j(tipY,.8)); ctx.stroke();
-    let coilTop=shaftTop+2, coilBot=shaftTop+55+Math.min(layers,8)*7;
-    let yarnBulge=Math.min(layers,8)*.7, totalCoils=12+Math.min(layers,8)*3;
+    let coilTop=shaftTop+2,coilBot=shaftTop+55+Math.min(layers,8)*7;
+    let yarnBulge=Math.min(layers,8)*.7,totalCoils=12+Math.min(layers,8)*3;
     setInk(0.9);
-    for (let i = 0; i < totalCoils; i++) {
-      let t = i/(totalCoils-1);
-      let cy2 = coilTop+(coilBot-coilTop)*t;
-      let localT = (cy2-shaftTop)/tipY;
-      let halfW = Math.max(1,(bellyW-1)*(1-localT*1.05));
-      let coilR = halfW*.88+yarnBulge*.9;
+    for(let i=0;i<totalCoils;i++){
+      let t=i/(totalCoils-1),cy2=coilTop+(coilBot-coilTop)*t;
+      let localT=(cy2-shaftTop)/tipY,halfW=Math.max(1,(bellyW-1)*(1-localT*1.05));
+      let coilR=halfW*.88+yarnBulge*.9;
       ctx.beginPath(); ctx.ellipse(j(0,.4),j(cy2,.4),coilR,1.0,0,0,Math.PI*2); ctx.stroke();
     }
     setInk(0.45);
-    let hatchStart=coilBot+4, hatchEnd=tipY-10, hatchN=8;
-    for (let i = 0; i < hatchN; i++) {
-      let t = i/hatchN;
-      let hy = hatchStart+(hatchEnd-hatchStart)*t;
-      let localT = (hy-shaftTop)/tipY;
-      let hw = Math.max(.5,(bellyW-1)*(1-localT*1.1));
+    let hatchStart=coilBot+4,hatchEnd=tipY-10,hatchN=8;
+    for(let i=0;i<hatchN;i++){
+      let t=i/hatchN,hy=hatchStart+(hatchEnd-hatchStart)*t;
+      let localT=(hy-shaftTop)/tipY,hw=Math.max(.5,(bellyW-1)*(1-localT*1.1));
       ctx.beginPath(); ctx.moveTo(j(-hw*.55,.5),j(hy,.5)); ctx.lineTo(j(hw*.55,.5),j(hy+4,.5)); ctx.stroke();
     }
     ctx.restore();
   }
 
-  function drawFalling(fy, fr) {
-    ctx.save();
-    ctx.translate(CX+55, fy); ctx.rotate(fr);
-    ctx.globalAlpha = Math.max(0, 1-(fy-280)/130);
+  function drawFalling(fy,fr){
+    ctx.save(); ctx.translate(CX+55,fy); ctx.rotate(fr);
+    ctx.globalAlpha=Math.max(0,1-(fy-280)/130);
     setInk(1.4);
     ctx.beginPath(); ctx.moveTo(0,0); ctx.lineTo(0,-10);
-    ctx.bezierCurveTo(0,-18,9,-20,9,-14);
-    ctx.bezierCurveTo(9,-10,4,-9,3,-11); ctx.stroke();
+    ctx.bezierCurveTo(0,-18,9,-20,9,-14); ctx.bezierCurveTo(9,-10,4,-9,3,-11); ctx.stroke();
     ctx.beginPath(); ctx.ellipse(0,12,20,6,0,0,Math.PI*2); ctx.stroke();
     ctx.beginPath(); ctx.moveTo(-4,18); ctx.bezierCurveTo(-8,32,-7,55,-1,75); ctx.lineTo(-.4,165); ctx.stroke();
     ctx.beginPath(); ctx.moveTo(4,18); ctx.bezierCurveTo(8,32,7,55,1,75); ctx.lineTo(.4,165); ctx.stroke();
     ctx.restore();
   }
 
-  function render(ts) {
-    if (!last) last = ts;
-    let dt = Math.min((ts-last)/1000, 0.05); last = ts;
-    ctx.clearRect(0, 0, W, H);
-    if (state === 'idle') {
-      bobY = 130; drawWool(); drawThread(bobY,false); drawSpindle(bobY,0,0,0);
-      raf = requestAnimationFrame(render); return;
+  function render(ts){
+    if(!last)last=ts;
+    let dt=Math.min((ts-last)/1000,0.05); last=ts;
+    ctx.clearRect(0,0,W,H);
+    if(state==='idle'){
+      bobY=130; drawWool(); drawThread(bobY,false); drawSpindle(bobY,0,0,0);
+      raf=requestAnimationFrame(render); return;
     }
-    if (state === 'spinning') {
-      let sp = clicks;
-      angle += sp*7*dt; bobY += bobDir*sp*20*dt;
-      if (bobY > 245) bobDir = -1;
-      if (bobY < 115) { bobDir = 1; yarnLayers = Math.min(yarnLayers+1,8); }
+    if(state==='spinning'){
+      angle+=clicks*7*dt; bobY+=bobDir*clicks*20*dt;
+      if(bobY>245)bobDir=-1;
+      if(bobY<115){bobDir=1; yarnLayers=Math.min(yarnLayers+1,8);}
       drawWool(); drawThread(bobY,false); drawSpindle(bobY,angle,0,yarnLayers);
-      raf = requestAnimationFrame(render); return;
+      raf=requestAnimationFrame(render); return;
     }
-    if (state === 'snapping') {
-      snapT += dt;
-      angle += 5*9*dt*(1+snapT*2);
-      bobY += bobDir*4*20*dt;
-      if (bobY > 245) bobDir = -1; if (bobY < 115) bobDir = 1;
-      let broken = snapT > 0.45, frac = broken ? Math.min(1,(snapT-0.45)*2.2) : 0;
-      let shakeX = broken ? Math.sin(snapT*55)*6 : 0;
+    if(state==='snapping'){
+      snapT+=dt; angle+=5*9*dt*(1+snapT*2); bobY+=bobDir*4*20*dt;
+      if(bobY>245)bobDir=-1; if(bobY<115)bobDir=1;
+      let broken=snapT>0.45, frac=broken?Math.min(1,(snapT-0.45)*2.2):0;
+      let shakeX=broken?Math.sin(snapT*55)*6:0;
       drawWool(); drawThread(bobY,broken,frac); drawSpindle(bobY,angle,shakeX,yarnLayers);
-      if (snapT > 1.4) { state = 'falling'; fallY = bobY; fallVel = 50; fallRot = 0; }
-      raf = requestAnimationFrame(render); return;
+      if(snapT>1.4){state='falling'; fallY=bobY; fallVel=50; fallRot=0;}
+      raf=requestAnimationFrame(render); return;
     }
-    if (state === 'falling') {
-      fallVel += 400*dt; fallY += fallVel*dt; fallRot += 5*dt;
+    if(state==='falling'){
+      fallVel+=400*dt; fallY+=fallVel*dt; fallRot+=5*dt;
       drawWool();
       ctx.save(); setInk(1.2);
       ctx.beginPath(); ctx.moveTo(CX,68); ctx.quadraticCurveTo(CX+10,90,CX+12,112); ctx.stroke(); ctx.restore();
-      drawFalling(fallY, fallRot);
-      if (fallY > H+100) { state = 'dead'; updateLabels(); return; }
-      raf = requestAnimationFrame(render); return;
+      drawFalling(fallY,fallRot);
+      if(fallY>H+100){state='dead'; updateLabels(); return;}
+      raf=requestAnimationFrame(render); return;
     }
-    if (state === 'dead') {
+    if(state==='dead'){
       drawWool();
       ctx.save(); setInk(1.2);
       ctx.beginPath(); ctx.moveTo(CX,68); ctx.quadraticCurveTo(CX+10,90,CX+12,112); ctx.stroke(); ctx.restore();
     }
   }
 
-  function updateLabels() {
-    if (state === 'spinning') {
-      const m = ['','spinning ×1 — click for more','spinning ×2 — click for danger','spinning ×3'];
-      hint.textContent = m[Math.min(clicks,3)]; status.textContent = '';
+  function updateLabels(){
+    if(state==='spinning'){
+      const m=['','spinning ×1 — click for more','spinning ×2 — click for danger','spinning ×3'];
+      hint.textContent=m[Math.min(clicks,3)]; status.textContent='';
     } else {
-      const h = {idle:'click to spin',snapping:'',falling:'',dead:'click to reset'};
-      const s = {idle:'',snapping:'thread snapping...!',falling:'',dead:'spindle lost.'};
-      hint.textContent = h[state]||''; status.textContent = s[state]||'';
+      const h={idle:'click to spin',snapping:'',falling:'',dead:'click to reset'};
+      const s={idle:'',snapping:'thread snapping...!',falling:'',dead:'spindle lost.'};
+      hint.textContent=h[state]||''; status.textContent=s[state]||'';
     }
   }
 
-  scene.addEventListener('click', () => {
-    if (state === 'dead') {
+  scene.addEventListener('click',()=>{
+    if(state==='dead'){
       clicks=0; state='idle'; angle=0; bobY=130; bobDir=1;
       snapT=0; fallY=0; fallVel=0; fallRot=0; yarnLayers=0; last=null;
       cancelAnimationFrame(raf); raf=requestAnimationFrame(render); updateLabels(); return;
     }
-    if (state === 'snapping' || state === 'falling') return;
+    if(state==='snapping'||state==='falling') return;
     clicks++;
-    state = clicks >= 3 ? 'snapping' : 'spinning';
+    state=clicks>=3?'snapping':'spinning';
     updateLabels();
   });
 
-  raf = requestAnimationFrame(render);
+  raf=requestAnimationFrame(render);
   updateLabels();
-})();
+});
 </script>
