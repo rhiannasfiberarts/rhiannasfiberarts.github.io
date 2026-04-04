@@ -1,5 +1,5 @@
 title: "Rhianna's Fiber Arts"
-description: "A fiber art blog — weaving, knitting, embroidery, and everything in between."
+description: "All things fiber fun"
 baseurl: ""
 url: "https://rhiannasfiberarts.github.io"
 
@@ -13,7 +13,7 @@ repository: rhiannasfiberarts.github.io
 # Author info (shown in footer)
 author:
   name: "Rhianna Lucas"
-  bio: "Fiber artist making things with fiber, one stitch at a time."
+  bio: "Fiber artist"
 
 # Jekyll settings
 markdown: kramdown
