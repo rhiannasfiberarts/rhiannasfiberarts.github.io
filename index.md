@@ -1,7 +1,7 @@
 ---
 layout: home
 hero_title: "Rhianna's Fiber Arts"
-hero_subtitle: "Exploring color, texture, and fiber arts"
+hero_subtitle: "Exploring all things fiber art!"
 hero_image: assets/images/yarn-ball.jpg
 ---
 
