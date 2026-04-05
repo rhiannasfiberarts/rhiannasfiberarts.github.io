@@ -9,7 +9,7 @@ tags:
   - invasive
 images:                
   - assets/images/IMG_1828.jpeg
-  - assets/images/IMG_1831.jpeg)
+  - assets/images/IMG_1831.jpeg
   - assets/images/IMG_1854.jpeg
   - assets/images/IMG_1858.jpeg
   - assets/images/IMG_1862.jpeg
