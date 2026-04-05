@@ -9,7 +9,7 @@ tags:
   - invasive
 # images:                   ← list additional photos for this post
 #  - assets/images/IMG_1828.jpeg
-#  - assets/images/IMG_1831.jpeg
+#   - assets/images/IMG_1831.jpeg
 #  - assets/images/IMG_1854.jpeg
 #  - assets/images/IMG_1858.jpeg
 #  - assets/images/IMG_1862.jpeg
@@ -25,7 +25,7 @@ Upon further research into the source of this color, I learned it was the compou
 
 So I proceeded to my local liquor store to purchase the highest proof I could find! This was followed by a trip to a local Nandina patch , and an hour or so of digging. This yielded me 162g of roots, which would be more than enough for my experiment. 
 
-![Photo of a kitchen scale with a liner and a pile of chopped up yellowish roots. The scale displays 162g.](assets/images/IMG_1828.jpeg)
+![Photo of a kitchen scale with a liner and a pile of chopped up yellowish roots. The scale displays 162g.](/assets/images/IMG_1828.jpeg)
 
 Once I chopped them into small enough pieces (a messy process done with a hatchet at my kitchen counter due to my clippers being in the mail on the way back from being forgotten at a friends) I put them all into a bottle. You may be wondering why I didn’t use a jar they could easily be removed from, and the answer is that I was impatient to get started and didn’t have an empty at hand. I then filled the bottle with 100 proof vodka and have it a shake! 
 
