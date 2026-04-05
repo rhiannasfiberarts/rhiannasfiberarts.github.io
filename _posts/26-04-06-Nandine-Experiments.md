@@ -9,7 +9,7 @@ tags:
   - invasive
 # images:                   ← list additional photos for this post
 #  - assets/images/IMG_1828.jpeg
-#   - assets/images/IMG_1831.jpeg
+#  - assets/images/IMG_1831.jpeg
 #  - assets/images/IMG_1854.jpeg
 #  - assets/images/IMG_1858.jpeg
 #  - assets/images/IMG_1862.jpeg
@@ -29,30 +29,30 @@ So I proceeded to my local liquor store to purchase the highest proof I could fi
 
 Once I chopped them into small enough pieces (a messy process done with a hatchet at my kitchen counter due to my clippers being in the mail on the way back from being forgotten at a friends) I put them all into a bottle. You may be wondering why I didn’t use a jar they could easily be removed from, and the answer is that I was impatient to get started and didn’t have an empty at hand. I then filled the bottle with 100 proof vodka and have it a shake! 
 
-![Photo of a glass bottle filled with root pieces and clear liquid next to a bottle labeled 100 Proof Vodka.](assets/images/IMG_1831.jpeg)
+![Photo of a glass bottle filled with root pieces and clear liquid next to a bottle labeled 100 Proof Vodka.](/assets/images/IMG_1831.jpeg)
 
 I let the extraction steep for 5 days. While it was steeping I began preparing my yarn for dyeing. The yarn I am using is an 80% Merino 20% Angora blend that I got on sale at knit pics. The first step was scouring, which I did with about 7g dawn dish soap for a 50g skein, and kept just below a simmer for around 45 minutes. 
 
-![Photo of a large pot filled with bubbly water with white yarn floating in it](assets/images/IMG_1854.jpeg)
+![Photo of a large pot filled with bubbly water with white yarn floating in it](/assets/images/IMG_1854.jpeg)
 
 After scouring, I rinsed the yarn twice and moved it immediately to the mordant bath. I mordant with 15% WOF Alum Sulfate and included 7% WOF cream of tartar to help keep the yarn soft. I kept the mordant bath just below a simmer for an hour, then let the yarn and water cool until it was room temp (several hours). After taking the yarn out I gave it a quick rinse and set it to dry. 
 
-![Photo of yarn lying across a drying rack.](assets/images/IMG_1858.jpeg)
+![Photo of yarn lying across a drying rack.](/assets/images/IMG_1858.jpeg)
 
 Before dyeing I split the yarn into about 10g mini skeins, so as to keep the scale of my experiments smaller and less wasteful. 
 
-![Photo of yarn on a scale reading 11g](assets/images/IMG_1862.jpeg)
+![Photo of yarn on a scale reading 11g](/assets/images/IMG_1862.jpeg)
 
 At last it was time for the dye pot! I poured the alcohol extraction through a strainer into the pot and added enough water for the skein to move freely and put it on the stove at low heat. I wet the skein and added it in before the water was hot and slowly brought it to just below a simmer. I kept it there for an hour, gently stirring occasionally while being carful not to agitate too much and cause felting. As you can see the yarn appears in the depot to be taking up a nice color! 
 
-![Photo of yarn being dipped into a pot of yellow-brown liquid](assets/images/IMG_1863.jpeg)
+![Photo of yarn being dipped into a pot of yellow-brown liquid](/assets/images/IMG_1863.jpeg)
 
-![Photo of yellowish yarn floating in a pot of yellow-brown liquid](assets/images/IMG_1868.jpeg)
+![Photo of yellowish yarn floating in a pot of yellow-brown liquid](/assets/images/IMG_1868.jpeg)
 
 But the true colors aren’t know until the yarn is out of the depot and dry. The end results were not a golden yellow as I was hoping, and while a nice warm brown color was achieved I am not sure it was worth the effort. 
 
-![Photo of white undyed yarn next to a warm brown yarn.](assets/images/IMG_1875.jpeg)
+![Photo of white undyed yarn next to a warm brown yarn.](/assets/images/IMG_1875.jpeg)
 
 I did not save the dye-pot despite there being pigment left because honestly I didn’t think it was worth the fiber. That being said I did refill the root bottle with vodka to see of a second extract might pull a bit different color. So the Nandina experiments will continue…
 
-![Photo of a bottle of roots filled with clear liquid.](assets/images/IMG_1866.jpeg)
+![Photo of a bottle of roots filled with clear liquid.](/assets/images/IMG_1866.jpeg)
