@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Nandina Experiments - April 4th"
+title: "Nandina Experiments"
 date: 2026-04-04
 cover_image: assets/images/IMG_1867.jpg
 tags:
