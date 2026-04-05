@@ -8,7 +8,15 @@ tags:
   - nandina
   - invasive
 # images:                   ← list additional photos for this post
-# 
+#  - assets/images/IMG_1828.jpg
+#  - assets/images/IMG_1831.jpg
+#  - assets/images/IMG_1854.jpg
+#  - assets/images/IMG_1858.jpg
+#  - assets/images/IMG_1862.jpg
+#  - assets/images/IMG_1863.jpg
+#  - assets/images/IMG_1868.jpg
+#  - assets/images/IMG_1875.jpg
+#  - assets/images/IMG_1866.jpg
 ---
 
 My latest project has been an undertaking filled with a lot of learning and very little in terms of satisfying results. I am investigating the potential of various invasive species in my area as dye stuff, and my first target was Nandina domestica, also know as heavenly bamboo. A precursory search with the key words “Nandina” and “Dye” will yield a few illusive and questionably reliable claims that the stems can yield a blueish-brown color. I received no such results when I attempted it, but I did notice a bright yellow present just beneath the bark. 
@@ -29,22 +37,22 @@ I let the extraction steep for 5 days. While it was steeping I began preparing m
 
 After scouring, I rinsed the yarn twice and moved it immediately to the mordant bath. I mordant with 15% WOF Alum Sulfate and included 7% WOF cream of tartar to help keep the yarn soft. I kept the mordant bath just below a simmer for an hour, then let the yarn and water cool until it was room temp (several hours). After taking the yarn out I gave it a quick rinse and set it to dry. 
 
-![Photo of yarn lying across a drying rack.](/assets/images/IMG_1858.jpg)
+![Photo of yarn lying across a drying rack.](assets/images/IMG_1858.jpg)
 
 Before dyeing I split the yarn into about 10g mini skeins, so as to keep the scale of my experiments smaller and less wasteful. 
 
-![Photo of yarn on a scale reading 11g](/assets/images/IMG_1862.jpg)
+![Photo of yarn on a scale reading 11g](assets/images/IMG_1862.jpg)
 
 At last it was time for the dye pot! I poured the alcohol extraction through a strainer into the pot and added enough water for the skein to move freely and put it on the stove at low heat. I wet the skein and added it in before the water was hot and slowly brought it to just below a simmer. I kept it there for an hour, gently stirring occasionally while being carful not to agitate too much and cause felting. As you can see the yarn appears in the depot to be taking up a nice color! 
 
-![Photo of yarn being dipped into a pot of yellow-brown liquid](/assets/images/IMG_1863.jpg)
+![Photo of yarn being dipped into a pot of yellow-brown liquid](assets/images/IMG_1863.jpg)
 
-![Photo of yellowish yarn floating in a pot of yellow-brown liquid](/assets/images/IMG_1868.jpg)
+![Photo of yellowish yarn floating in a pot of yellow-brown liquid](assets/images/IMG_1868.jpg)
 
 But the true colors aren’t know until the yarn is out of the depot and dry. The end results were not a golden yellow as I was hoping, and while a nice warm brown color was achieved I am not sure it was worth the effort. 
 
-![Photo of white undyed yarn next to a warm brown yarn.](/assets/images/IMG_1875.jpg)
+![Photo of white undyed yarn next to a warm brown yarn.](assets/images/IMG_1875.jpg)
 
 I did not save the dye-pot despite there being pigment left because honestly I didn’t think it was worth the fiber. That being said I did refill the root bottle with vodka to see of a second extract might pull a bit different color. So the Nandina experiments will continue…
 
-![Photo of a bottle of roots filled with clear liquid.](/assets/images/IMG_1866.jpg)
+![Photo of a bottle of roots filled with clear liquid.](assets/images/IMG_1866.jpg)
