@@ -138,7 +138,7 @@ author:
 1. numbered item
 
 [Link text](https://example.com)
-![image alt text](assets/images/photo.jpg)
+![image alt text](/assets/images/photo.jpg)
 ```
 
 ---
