@@ -19,7 +19,7 @@ tags:
 #  - assets/images/IMG_1866.jpeg
 ---
 
-My latest project has been an undertaking filled with a lot of learning and very little in terms of satisfying results. I am investigating the potential of various invasive species in my area as dye stuff, and my first target was Nandina domestica, also know as heavenly bamboo. A precursory search with the key words “Nandina” and “Dye” will yield a few illusive and questionably reliable claims that the stems can yield a blueish-brown color. I received no such results when I attempted it, but I did notice a bright yellow present just beneath the bark. 
+I am currently investigating the potential of various invasive species in my area as dye stuff, and my first target was Nandina domestica, also know as heavenly bamboo. A precursory search with the key words “Nandina” and “Dye” will yield a few illusive and questionably reliable claims that the stems can yield a blueish-brown color. I received no such results when I attempted it, but I did notice a bright yellow present just beneath the bark. 
 
 Upon further research into the source of this color, I learned it was the compound berberine. Berberine is an alkaloid that has historically been used as a pigment with a golden-yellow hue, and can be extracted using an alcohol extraction. As my previous attempts had just been the usually low temperature stewing in water usually done in natural dyeing, I thought an Alcohol extraction sounded quite promising! 
 
