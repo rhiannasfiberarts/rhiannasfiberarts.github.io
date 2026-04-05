@@ -2,7 +2,7 @@
 layout: post
 title: "Some Recent Weaves"
 date: 2026-04-05
-cover_image: assets/images/IMG_1843.jpg
+cover_image: assets/images/IMG_1843.JPG
 tags:
   - intro
 images:
