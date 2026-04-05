@@ -15,7 +15,8 @@ images:
 - assets/images/IMG_1660.jpeg
 ---
 
-These are just photos from a few of my recent weavinf projects. The pillows are a mix of bluw and gray wool I got at the Studio Tour garage sale. The pillows are a fun 2/1 twill pattern with cotton that I got from a graft exchange (the white) and a local yarn store in my home town in Michigan (the green and orange). I love the results from both projects, and hope you do as well! 
+These are photos from a few of my recent weaving projects. 
+The pillows are a mix of blue and gray wool I got at the Studio Tour garage sale. The washcloth is a 2/1 twill pattern with cotton that I got from a craft exchange (the white) and a local yarn store in my home town (the green and orange). I love the results from both projects, and hope you do as well!
 
 ![Photo of a warped loom with white, green, and orange.](/assets/images/IMG_1739.jpeg)
 ![Photo of loom with some weaving on it.](/assets/images/IMG_1744.jpeg)
