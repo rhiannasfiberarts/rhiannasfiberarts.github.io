@@ -8,15 +8,7 @@ tags:
   - nandina
   - invasive
 # images:                   ← list additional photos for this post
-#   - (assets/images/IMG_1828.jpg)
-#   - (assets/images/IMG_1831.jpg)
-#   - (assets/images/IMG_1854.jpg)
-#   - /assets/images/IMG_1858.jpg
-#   - /assets/images/IMG_1862.jpg
-#   - /assets/images/IMG_1863.jpg
-#   - /assets/images/IMG_1868.jpg
-#   - /assets/images/IMG_1875.jpg
-#   - /assets/images/IMG_1866.jpg
+# 
 ---
 
 My latest project has been an undertaking filled with a lot of learning and very little in terms of satisfying results. I am investigating the potential of various invasive species in my area as dye stuff, and my first target was Nandina domestica, also know as heavenly bamboo. A precursory search with the key words “Nandina” and “Dye” will yield a few illusive and questionably reliable claims that the stems can yield a blueish-brown color. I received no such results when I attempted it, but I did notice a bright yellow present just beneath the bark. 
