@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Spinning silk on a Charkha "
-date: 2026-04-014
+title: "Spinning silk on a Charkha"
+date: 2026-04-14
 cover_image: assets/images/IMG_1895.jpeg
 tags:
   - intro
