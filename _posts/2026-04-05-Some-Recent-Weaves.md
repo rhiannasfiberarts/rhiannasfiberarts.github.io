@@ -4,7 +4,8 @@ title: "Some Recent Weaves"
 date: 2026-04-05
 cover_image: assets/images/IMG_1643.JPG
 tags:
-  - intro
+  - weaving
+  - ridgid heddle
 images:
 - assets/images/IMG_1739.jpeg
 - assets/images/IMG_1744.jpeg
