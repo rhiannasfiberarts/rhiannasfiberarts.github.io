@@ -4,7 +4,9 @@ title: "Spinning silk on a Charkha"
 date: 2026-04-14
 cover_image: assets/images/IMG_1895.jpeg
 tags:
-  - intro
+  - spinning
+  - silk
+  - charkha
 images:
 - assets/images/IMG_1919.jpeg
 - assets/images/IMG_1894.jpeg
