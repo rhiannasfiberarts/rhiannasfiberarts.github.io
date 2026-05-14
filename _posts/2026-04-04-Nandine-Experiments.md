@@ -9,7 +9,6 @@ tags:
   - invasive
 images:                
   - assets/images/IMG_1828.jpeg
-  - assets/images/IMG_1831.jpeg
   - assets/images/IMG_1854.jpeg
   - assets/images/IMG_1858.jpeg
   - assets/images/IMG_1862.jpeg
@@ -28,8 +27,6 @@ So I proceeded to my local liquor store to purchase the highest proof I could fi
 ![Photo of a kitchen scale with a liner and a pile of chopped up yellowish roots. The scale displays 162g.](/assets/images/IMG_1828.jpeg)
 
 Once I chopped them into small enough pieces (a messy process done with a hatchet at my kitchen counter due to my clippers being in the mail on the way back from being forgotten at a friends) I put them all into a bottle. You may be wondering why I didn’t use a jar they could easily be removed from, and the answer is that I was impatient to get started and didn’t have an empty at hand. I then filled the bottle with 100 proof vodka and have it a shake! 
-
-![Photo of a glass bottle filled with root pieces and clear liquid next to a bottle labeled 100 Proof Vodka.](/assets/images/IMG_1831.jpeg)
 
 I let the extraction steep for 5 days. While it was steeping I began preparing my yarn for dyeing. The yarn I am using is an 80% Merino 20% Angora blend that I got on sale at knit pics. The first step was scouring, which I did with about 7g dawn dish soap for a 50g skein, and kept just below a simmer for around 45 minutes. 
 
