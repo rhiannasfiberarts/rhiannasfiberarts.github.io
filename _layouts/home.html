@@ -2,6 +2,63 @@
 layout: default
 ---
 <style>
+  .social-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 0.5rem 0;
+    min-width: 180px;
+  }
+
+  .social-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    padding: 0.6rem 1.1rem;
+    border-radius: 6px;
+    font-family: 'Lato', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 400;
+    letter-spacing: 0.01em;
+    text-decoration: none;
+    border: 1.5px solid var(--color-border);
+    background: var(--color-surface);
+    color: var(--color-text);
+    transition: background 0.15s, border-color 0.15s, color 0.15s, transform 0.1s;
+    white-space: nowrap;
+  }
+
+  .social-btn:hover {
+    background: var(--color-accent);
+    border-color: var(--color-accent);
+    color: #fff;
+    transform: translateX(3px);
+  }
+
+  .social-btn svg {
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+  }
+
+  .social-label {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+  }
+
+  .social-platform {
+    font-size: 0.78rem;
+    opacity: 0.65;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .social-handle {
+    font-size: 0.92rem;
+  }
+
   @media (min-width: 900px) {
     .home-about-inner {
       display: grid;
@@ -9,25 +66,22 @@ layout: default
       align-items: start;
       gap: 2rem;
     }
-    .home-spindle {
+    .home-social {
       display: flex;
       justify-content: center;
       align-items: flex-start;
     }
   }
+
   @media (max-width: 899px) {
-    .home-spindle { display: none !important; }
+    .home-social {
+      margin-bottom: 1.25rem;
+    }
+    .social-links {
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
   }
-  #spindle-scene {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 0.5rem 0;
-    cursor: pointer;
-    user-select: none;
-    background: transparent;
-  }
-  #spindle-cv { background: transparent; display: block; }
 </style>
 
 <section class="hero">
@@ -48,11 +102,40 @@ layout: default
 {% if page.content != "" %}
 <section class="home-about container">
   <div class="home-about-inner">
-    <div class="home-spindle">
-      <div id="spindle-scene">
-        <canvas id="spindle-cv" width="240" height="460"></canvas>
+    <div class="home-social">
+      <div class="social-links">
+        <a class="social-btn" href="https://www.tiktok.com/@rhiannasfiberart" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.76a4.85 4.85 0 0 1-1.01-.07z"/>
+          </svg>
+          <span class="social-label">
+            <span class="social-platform">TikTok</span>
+            <span class="social-handle">@rhiannasfiberart</span>
+          </span>
+        </a>
+
+        <a class="social-btn" href="https://www.youtube.com/@RhiannasFiberArts" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M23.5 6.19a3.02 3.02 0 0 0-2.12-2.14C19.54 3.5 12 3.5 12 3.5s-7.54 0-9.38.55A3.02 3.02 0 0 0 .5 6.19C0 8.04 0 12 0 12s0 3.96.5 5.81a3.02 3.02 0 0 0 2.12 2.14C4.46 20.5 12 20.5 12 20.5s7.54 0 9.38-.55a3.02 3.02 0 0 0 2.12-2.14C24 15.96 24 12 24 12s0-3.96-.5-5.81zM9.75 15.5v-7l6.25 3.5-6.25 3.5z"/>
+          </svg>
+          <span class="social-label">
+            <span class="social-platform">YouTube</span>
+            <span class="social-handle">RhiannasFiberArts</span>
+          </span>
+        </a>
+
+        <a class="social-btn" href="https://www.instagram.com/rhiannasfiberarts/" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/>
+          </svg>
+          <span class="social-label">
+            <span class="social-platform">Instagram</span>
+            <span class="social-handle">@rhiannasfiberarts</span>
+          </span>
+        </a>
       </div>
     </div>
+
     <div class="home-about-text">
       {{ content }}
     </div>
@@ -85,202 +168,3 @@ layout: default
   </div>
   {% endif %}
 </section>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  if (window.innerWidth < 900) return;
-
-  const cv    = document.getElementById('spindle-cv');
-  const scene = document.getElementById('spindle-scene');
-  if (!cv || !scene) return;
-
-  const ctx = cv.getContext('2d');
-  const W=240, H=460, CX=120;
-
-  let clicks=0, state='idle', angle=0;
-  let bobY=130, bobDir=1;
-  let snapT=0, fallY=0, fallVel=0, fallRot=0;
-  let raf, last=null, yarnLayers=0;
-
-  function j(v,amt){return v+(Math.random()-0.5)*amt;}
-
-  function setInk(width){
-    const ink=getComputedStyle(document.documentElement).getPropertyValue('--color-text-primary').trim()||'#1a1a1a';
-    ctx.strokeStyle=ink; ctx.lineWidth=width||1.2; ctx.lineCap='round'; ctx.lineJoin='round';
-  }
-
-  function drawWool(){
-    ctx.save(); ctx.translate(CX,58); setInk(1.2);
-    const circles=[
-      {x:-22,y:-18,r:16},{x:2,y:-26,r:20},{x:26,y:-18,r:16},
-      {x:-36,y:-4,r:13},{x:38,y:-4,r:13},
-      {x:-18,y:8,r:14},{x:4,y:10,r:15},{x:24,y:8,r:14},
-    ];
-    for(let c of circles){
-      ctx.beginPath();
-      ctx.arc(j(c.x,1),j(c.y,1),c.r+j(0,0.5),0,Math.PI*2);
-      ctx.stroke();
-    }
-    setInk(0.6);
-    const textures=[
-      [-24,-8,-6,-12],[-6,-12,12,-8],[12,-8,28,-4],
-      [-20,2,0,-2],[0,-2,20,2],[-16,10,4,6],[4,6,22,10],
-      [-10,-18,8,-22],[8,-22,22,-16],
-    ];
-    for(let t of textures){
-      ctx.beginPath();
-      ctx.moveTo(j(t[0],1.2),j(t[1],1.2));
-      ctx.quadraticCurveTo(
-        j((t[0]+t[2])/2,1.5),
-        j((t[1]+t[3])/2-Math.abs(t[2]-t[0])*0.08,1.5),
-        j(t[2],1.2),j(t[3],1.2)
-      );
-      ctx.stroke();
-    }
-    ctx.restore();
-  }
-
-  function drawThread(topY,broken,breakFrac){
-    let startY=66, endY=topY+6;
-    ctx.save(); setInk(1.2);
-    if(!broken){
-      ctx.beginPath();
-      for(let y=startY;y<=endY;y+=4){
-        let t=(y-startY)/(endY-startY);
-        let wave=Math.sin(angle*2+t*10)*1.5;
-        y===startY?ctx.moveTo(CX+wave,y):ctx.lineTo(CX+wave,y);
-      }
-      ctx.stroke();
-    } else {
-      let breakY=startY+(endY-startY)*breakFrac;
-      ctx.beginPath();
-      for(let y=startY;y<=breakY;y+=4){
-        let t=(y-startY)/(endY-startY);
-        let wave=Math.sin(angle*2+t*10)*1.5;
-        y===startY?ctx.moveTo(CX+wave,y):ctx.lineTo(CX+wave,y);
-      }
-      ctx.stroke();
-      ctx.beginPath(); ctx.moveTo(CX,breakY);
-      ctx.quadraticCurveTo(CX+12,breakY+12,CX+8,breakY+28); ctx.stroke();
-    }
-    ctx.restore();
-  }
-
-  function drawHook(hookAng){
-    setInk(1.6);
-    const reach=9, projX=reach*Math.sin(hookAng);
-    ctx.beginPath();
-    ctx.moveTo(j(0,.5),j(0,.5)); ctx.lineTo(j(0,.5),j(-10,.5));
-    ctx.bezierCurveTo(j(0,.4),j(-17,.4),j(projX,.4),j(-20,.4),j(projX,.4),j(-14,.4));
-    ctx.bezierCurveTo(j(projX,.4),j(-10,.4),j(projX*.5,.4),j(-9,.4),j(projX*.4,.4),j(-11,.4));
-    ctx.stroke();
-  }
-
-  function drawSpindle(topY,ang,shakeX,layers){
-    ctx.save(); ctx.translate(CX+(shakeX||0),topY);
-    drawHook(ang);
-    const WR=22,WRY=6,wy=12;
-    setInk(1.4); ctx.beginPath(); ctx.ellipse(j(0,.8),j(wy,.8),WR,WRY,0,0,Math.PI*2); ctx.stroke();
-    setInk(0.6);
-    ctx.beginPath(); ctx.ellipse(j(0,.5),j(wy,.5),WR*.65,WRY*.65,0,0,Math.PI*2); ctx.stroke();
-    ctx.beginPath(); ctx.ellipse(j(0,.4),j(wy,.4),WR*.3,WRY*.3,0,0,Math.PI*2); ctx.stroke();
-    const rimH=5;
-    setInk(1.2);
-    ctx.beginPath(); ctx.moveTo(j(-WR,.6),j(wy,.4)); ctx.lineTo(j(-WR,.6),j(wy+rimH,.4)); ctx.stroke();
-    ctx.beginPath(); ctx.moveTo(j(WR,.6),j(wy,.4)); ctx.lineTo(j(WR,.6),j(wy+rimH,.4)); ctx.stroke();
-    setInk(1.0); ctx.beginPath(); ctx.ellipse(j(0,.6),j(wy+rimH,.5),WR,WRY,0,0,Math.PI); ctx.stroke();
-    const shaftTop=wy+rimH+4,bellyY=shaftTop+30,bellyW=8,tipY=shaftTop+152;
-    setInk(1.3);
-    ctx.beginPath();
-    ctx.moveTo(j(-4,.8),j(shaftTop,.8));
-    ctx.bezierCurveTo(j(-bellyW,1),j(shaftTop+12,1),j(-bellyW,1),j(bellyY,1),j(-1.2,.8),j(bellyY+28,.8));
-    ctx.lineTo(j(-.4,.5),j(tipY,.8)); ctx.stroke();
-    ctx.beginPath();
-    ctx.moveTo(j(4,.8),j(shaftTop,.8));
-    ctx.bezierCurveTo(j(bellyW,1),j(shaftTop+12,1),j(bellyW,1),j(bellyY,1),j(1.2,.8),j(bellyY+28,.8));
-    ctx.lineTo(j(.4,.5),j(tipY,.8)); ctx.stroke();
-    let coilTop=shaftTop+2,coilBot=shaftTop+55+Math.min(layers,8)*7;
-    let yarnBulge=Math.min(layers,8)*.7,totalCoils=12+Math.min(layers,8)*3;
-    setInk(0.9);
-    for(let i=0;i<totalCoils;i++){
-      let t=i/(totalCoils-1),cy2=coilTop+(coilBot-coilTop)*t;
-      let localT=(cy2-shaftTop)/tipY,halfW=Math.max(1,(bellyW-1)*(1-localT*1.05));
-      let coilR=halfW*.88+yarnBulge*.9;
-      ctx.beginPath(); ctx.ellipse(j(0,.4),j(cy2,.4),coilR,1.0,0,0,Math.PI*2); ctx.stroke();
-    }
-    setInk(0.45);
-    let hatchStart=coilBot+4,hatchEnd=tipY-10,hatchN=8;
-    for(let i=0;i<hatchN;i++){
-      let t=i/hatchN,hy=hatchStart+(hatchEnd-hatchStart)*t;
-      let localT=(hy-shaftTop)/tipY,hw=Math.max(.5,(bellyW-1)*(1-localT*1.1));
-      ctx.beginPath(); ctx.moveTo(j(-hw*.55,.5),j(hy,.5)); ctx.lineTo(j(hw*.55,.5),j(hy+4,.5)); ctx.stroke();
-    }
-    ctx.restore();
-  }
-
-  function drawFalling(fy,fr){
-    ctx.save(); ctx.translate(CX+55,fy); ctx.rotate(fr);
-    ctx.globalAlpha=Math.max(0,1-(fy-280)/130);
-    setInk(1.4);
-    ctx.beginPath(); ctx.moveTo(0,0); ctx.lineTo(0,-10);
-    ctx.bezierCurveTo(0,-18,9,-20,9,-14); ctx.bezierCurveTo(9,-10,4,-9,3,-11); ctx.stroke();
-    ctx.beginPath(); ctx.ellipse(0,12,20,6,0,0,Math.PI*2); ctx.stroke();
-    ctx.beginPath(); ctx.moveTo(-4,18); ctx.bezierCurveTo(-8,32,-7,55,-1,75); ctx.lineTo(-.4,165); ctx.stroke();
-    ctx.beginPath(); ctx.moveTo(4,18); ctx.bezierCurveTo(8,32,7,55,1,75); ctx.lineTo(.4,165); ctx.stroke();
-    ctx.restore();
-  }
-
-  function render(ts){
-    if(!last)last=ts;
-    let dt=Math.min((ts-last)/1000,0.05); last=ts;
-    ctx.clearRect(0,0,W,H);
-    if(state==='idle'){
-      bobY=130; drawWool(); drawThread(bobY,false); drawSpindle(bobY,0,0,0);
-      raf=requestAnimationFrame(render); return;
-    }
-    if(state==='spinning'){
-      angle+=clicks*7*dt; bobY+=bobDir*clicks*20*dt;
-      if(bobY>245)bobDir=-1;
-      if(bobY<115){bobDir=1; yarnLayers=Math.min(yarnLayers+1,8);}
-      drawWool(); drawThread(bobY,false); drawSpindle(bobY,angle,0,yarnLayers);
-      raf=requestAnimationFrame(render); return;
-    }
-    if(state==='snapping'){
-      snapT+=dt; angle+=5*9*dt*(1+snapT*2); bobY+=bobDir*4*20*dt;
-      if(bobY>245)bobDir=-1; if(bobY<115)bobDir=1;
-      let broken=snapT>0.45, frac=broken?Math.min(1,(snapT-0.45)*2.2):0;
-      let shakeX=broken?Math.sin(snapT*55)*6:0;
-      drawWool(); drawThread(bobY,broken,frac); drawSpindle(bobY,angle,shakeX,yarnLayers);
-      if(snapT>1.4){state='falling'; fallY=bobY; fallVel=50; fallRot=0;}
-      raf=requestAnimationFrame(render); return;
-    }
-    if(state==='falling'){
-      fallVel+=400*dt; fallY+=fallVel*dt; fallRot+=5*dt;
-      drawWool();
-      ctx.save(); setInk(1.2);
-      ctx.beginPath(); ctx.moveTo(CX,68); ctx.quadraticCurveTo(CX+10,90,CX+12,112); ctx.stroke(); ctx.restore();
-      drawFalling(fallY,fallRot);
-      if(fallY>H+100){state='dead'; return;}
-      raf=requestAnimationFrame(render); return;
-    }
-    if(state==='dead'){
-      drawWool();
-      ctx.save(); setInk(1.2);
-      ctx.beginPath(); ctx.moveTo(CX,68); ctx.quadraticCurveTo(CX+10,90,CX+12,112); ctx.stroke(); ctx.restore();
-    }
-  }
-
-  scene.addEventListener('click',()=>{
-    if(state==='dead'){
-      clicks=0; state='idle'; angle=0; bobY=130; bobDir=1;
-      snapT=0; fallY=0; fallVel=0; fallRot=0; yarnLayers=0; last=null;
-      cancelAnimationFrame(raf); raf=requestAnimationFrame(render); return;
-    }
-    if(state==='snapping'||state==='falling') return;
-    clicks++;
-    state=clicks>=3?'snapping':'spinning';
-  });
-
-  raf=requestAnimationFrame(render);
-});
-</script>
