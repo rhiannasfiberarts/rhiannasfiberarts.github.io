@@ -1,6 +1,6 @@
 ---
 title: "Invasive Species Presentation"
-cover_image: IMG_2086.jpeg
+cover_image: /assets/images/IMG_2086.jpeg
 tags:
   - Invasives
   - Natural Dye
