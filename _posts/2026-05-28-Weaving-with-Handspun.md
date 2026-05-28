@@ -1,3 +1,4 @@
+---
 layout: post
 title: "Weaving with Handspun"
 date: 2026-05-28
@@ -11,7 +12,7 @@ images:
 - assets/images/IMG_1947.jpeg
 - assets/images/IMG_1953.jpeg
 - assets/images/Cutting off loom timelapse.mov
-
+---
 
 In a previous blog post I talked about spinning Bourette silk on my charkha. I have finally spun enough to weave with, and it is time to warp the loom!
 
