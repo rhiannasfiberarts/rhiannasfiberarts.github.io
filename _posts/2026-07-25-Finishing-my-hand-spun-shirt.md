@@ -10,8 +10,8 @@ tags:
 images:
   - assets/images/IMG_1942.jpeg
   - assets/images/IMG_2138.jpeg
-  - assets/images/IMG_9266.jpeg
-  - assets/images/IMG_9274.jpeg
+  - assets/images/IMG_9266.jpg
+  - assets/images/IMG_9274.jpg
   - assets/images/IMG_2234.jpeg
   - assets/images/IMG_2221.jpeg
   - assets/images/IMG_2226.jpeg
@@ -31,8 +31,8 @@ Now that the construction was all finished, it was time for the most fun part: d
 
 I dyed it using madder root from Deb McClintock — check out her blog at https://debmcclintock.me for great resources on natural dyeing and weaving. Myself and some fellow guild members went out to her property to help dig up the bed in exchange for taking some of the madder home with us.
 
-![Photo of harvesting madder](/assets/images/IMG_9266.jpeg)
-![Photo of buckets of harvested madder](/assets/images/IMG_9274.jpeg)
+![Photo of harvesting madder](/assets/images/IMG_9266.jpg)
+![Photo of buckets of harvested madder](/assets/images/IMG_9274.jpg)
 
 I started by scouring the shirt with Dawn dish soap and mordanting it with alum. At the same time, I started extracting the color from the roots by bringing them to just below a simmer for an hour, then putting a lid on the pot and letting them soak for a day. I repeated this process three times before straining out the roots. Then the shirt went in at just below a simmer for 90 minutes, and I left it to soak in the dye bath for a day before washing it. The results turned out a beautiful pink coral color I am very happy with!
 
