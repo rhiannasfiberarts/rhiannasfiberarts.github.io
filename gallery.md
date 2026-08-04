@@ -122,7 +122,17 @@ permalink: /gallery/
   </header>
 
   <div class="gallery-grid gallery-grid--large" id="galleryGrid">
-    {% assign all_images = site.static_files | where_exp: "file", "file.path contains '/assets/images/'" %}
+    {% comment %}
+      Images under /assets/images/presentations/ are embedded in specific
+      posts (like slide decks) and shouldn't clutter the standalone gallery.
+    {% endcomment %}
+    {% assign candidate_images = site.static_files | where_exp: "file", "file.path contains '/assets/images/'" %}
+    {% assign all_images = "" | split: "" %}
+    {% for file in candidate_images %}
+      {% unless file.path contains '/assets/images/presentations/' %}
+        {% assign all_images = all_images | push: file %}
+      {% endunless %}
+    {% endfor %}
     {% assign shown_paths = "" | split: "" %}
 
     {% comment %}Post-linked images, newest post first{% endcomment %}
