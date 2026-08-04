@@ -6,7 +6,7 @@ cover_image: assets/images/IMG_1983.jpeg
 tags:
   - dyeing
   - invasives
-  - tree of heavan
+  - tree of heaven
 images:
 - assets/images/IMG_1971.jpeg
 - assets/images/IMG_1972.jpeg
