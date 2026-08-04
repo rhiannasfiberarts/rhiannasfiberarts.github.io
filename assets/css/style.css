@@ -470,6 +470,141 @@ h1, h2, h3, h4 {
 .back-to-blog:hover { color: var(--color-accent); }
 
 /* =========================================================
+   GALLERY FILTER
+   ========================================================= */
+.page-header--with-filter {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+}
+
+.page-header--with-filter h1 { margin-bottom: 0; }
+
+.gallery-filter {
+  position: relative;
+  min-width: 220px;
+}
+
+.filter-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  width: 100%;
+  background: var(--color-surface);
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 0.6rem 1rem;
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: var(--color-text);
+  cursor: pointer;
+  transition: border-color 0.15s;
+}
+
+.filter-toggle:hover,
+.filter-toggle[aria-expanded="true"] {
+  border-color: var(--color-accent);
+}
+
+.filter-toggle-label {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.filter-toggle-caret {
+  flex-shrink: 0;
+  color: var(--color-muted);
+  font-size: 0.75rem;
+  transition: transform 0.15s;
+}
+
+.filter-toggle[aria-expanded="true"] .filter-toggle-caret {
+  transform: rotate(180deg);
+}
+
+.filter-panel {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  right: 0;
+  width: 260px;
+  max-width: 80vw;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  box-shadow: 0 8px 28px rgba(44, 31, 14, 0.16);
+  z-index: 50;
+  overflow: hidden;
+}
+
+.filter-search {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid var(--color-border);
+  padding: 0.7rem 1rem;
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  font-weight: 300;
+  background: transparent;
+  color: var(--color-text);
+}
+
+.filter-search:focus {
+  outline: none;
+  background: var(--color-bg);
+}
+
+.filter-options {
+  list-style: none;
+  max-height: 280px;
+  overflow-y: auto;
+}
+
+.filter-option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.55rem 1rem;
+  font-size: 0.875rem;
+  color: var(--color-text);
+  cursor: pointer;
+  transition: background 0.12s;
+}
+
+.filter-option:hover { background: var(--color-bg); }
+
+.filter-option[aria-selected="true"] {
+  background: var(--color-tag-bg);
+  font-weight: 600;
+}
+
+.filter-option-label {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.filter-option-count {
+  flex-shrink: 0;
+  font-size: 0.75rem;
+  color: var(--color-muted);
+}
+
+.filter-empty {
+  display: none;
+  padding: 0.75rem 1rem;
+  font-size: 0.8125rem;
+  color: var(--color-muted);
+  font-style: italic;
+  cursor: default;
+}
+
+/* =========================================================
    GALLERY
    ========================================================= */
 .gallery-grid {
@@ -550,6 +685,13 @@ h1, h2, h3, h4 {
   }
   .post-nav { flex-direction: column; gap: 1rem; }
   .post-nav-next { text-align: left; }
+
+  .page-header--with-filter {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .gallery-filter { min-width: 0; width: 100%; }
+  .filter-panel { left: 0; right: 0; width: auto; max-width: none; }
 }
 
 @media (max-width: 420px) {
