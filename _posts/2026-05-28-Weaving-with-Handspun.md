@@ -5,7 +5,6 @@ date: 2026-05-28
 cover_image: assets/images/IMG_1992.jpeg
 tags:
   - weaving
-  - handspun
 images:
 - assets/images/IMG_1945 2.jpeg
 - assets/images/IMG_1946 2.jpeg
