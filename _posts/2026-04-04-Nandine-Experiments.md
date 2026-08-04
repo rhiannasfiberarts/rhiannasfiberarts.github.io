@@ -6,7 +6,7 @@ cover_image: assets/images/IMG_1867.jpeg
 tags:
   - dyeing
   - nandina
-  - invasive
+  - invasives
 images:                
   - assets/images/IMG_1828.jpeg
   - assets/images/IMG_1854.jpeg
